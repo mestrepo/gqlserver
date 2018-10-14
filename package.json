@@ -1,0 +1,29 @@
+{
+  "name": "gqlserver",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0",
+    "apollo-boost": "^0.1.16",
+    "apollo-server-express": "^2.1.0",
+    "casual": "^1.5.19",
+    "graphql": "^14.0.2",
+    "lodash": "^4.17.11",
+    "meteor-node-stubs": "^0.4.1",
+    "node-fetch": "^2.2.0",
+    "sequelize": "^4.39.0",
+    "sqlite": "^3.0.0"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  }
+}
