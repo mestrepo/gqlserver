@@ -10,6 +10,8 @@ import { AuthorModel, db } from '../imports/api/connectors'
 import typeDefs from '../imports/api/schema'
 import resolvers from '../imports/api/resolvers'
 
+import '../imports/api/tasks.js';
+
 Meteor.startup(() => {
   // create mock data with a seed, so we always get the same
   // modify the mock data creation to also create some views:
