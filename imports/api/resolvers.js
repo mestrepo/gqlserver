@@ -1,4 +1,5 @@
 import { Author, FortuneCookie } from './connectors';
+import { Views } from './tasks';
 
 // A map of functions which return data for the schema.
 const resolvers = {
@@ -23,7 +24,7 @@ const resolvers = {
       return post.getAuthor();
     },
     views(post) {
-      // return View.findOne({ postId: post.id }).then(view => view.views);
+      return Views.rawCollection().findOne({ postId: post.id }).then(view => view.views);
     }
   }
 };

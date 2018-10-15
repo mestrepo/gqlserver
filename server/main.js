@@ -10,7 +10,7 @@ import { AuthorModel, db } from '../imports/api/connectors'
 import typeDefs from '../imports/api/schema'
 import resolvers from '../imports/api/resolvers'
 
-import '../imports/api/tasks.js';
+import { Views } from '../imports/api/tasks';
 
 Meteor.startup(() => {
   // create mock data with a seed, so we always get the same
@@ -25,6 +25,12 @@ Meteor.startup(() => {
         return author.createPost({
           title: `A post by ${author.firstName}`,
           text: casual.sentences(3),
+        }).then((post) => { // <- the new part starts here
+          // create some View mocks
+          return Views.rawCollection().update(
+            { postId: post.id },
+            { views: casual.integer(0, 100), postId: post.id },
+            { upsert: true });
         });
       });
     });
