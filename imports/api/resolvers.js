@@ -7,7 +7,7 @@ const resolvers = {
     author(_, args) {
       return Author.find({ where: args });
     },
-    allAuthors(_, args) {
+    allAuthors() {
       return Author.findAll();
     },
     getFortuneCookie() {
