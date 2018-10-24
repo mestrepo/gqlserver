@@ -2,15 +2,15 @@ import { Meteor } from 'meteor/meteor'
 import { ApolloServer, gql } from 'apollo-server-express'
 import { WebApp } from 'meteor/webapp'
 import { getUser } from 'meteor/apollo'
-import casual from 'casual';
-import _ from 'lodash';
+import casual from 'casual'
+import _ from 'lodash'
 
 import { AuthorModel, db } from '../imports/api/connectors'
 
 import typeDefs from '../imports/api/schema'
 import resolvers from '../imports/api/resolvers'
 
-import { Views } from '../imports/api/tasks';
+import { Views } from '../imports/api/tasks'
 
 Meteor.startup(() => {
   // create mock data with a seed, so we always get the same
@@ -30,12 +30,12 @@ Meteor.startup(() => {
           return Views.rawCollection().update(
             { postId: post.id },
             { views: casual.integer(0, 100), postId: post.id },
-            { upsert: true });
-        });
-      });
-    });
-  });
-});
+            { upsert: true })
+        })
+      })
+    })
+  })
+})
 
 const server = new ApolloServer({
   typeDefs,

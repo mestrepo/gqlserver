@@ -1,7 +1,7 @@
 import { Accounts } from 'meteor/accounts-base'
 import ApolloClient from 'apollo-boost'
 
-import '../imports/ui/body.js';
+import '../imports/ui/body.js'
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -10,5 +10,5 @@ const client = new ApolloClient({
       headers: {
         authorization: Accounts._storedLoginToken()
       }
-    }))
+  }))
 })
