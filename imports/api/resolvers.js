@@ -31,6 +31,13 @@ const resolvers = {
       Tasks.remove(args.id)
       return args.id
     },
+    toggleChecked(_, args) {
+      let task = Tasks.findOne(args.id)
+      Tasks.update(args.id, {
+        $set: { checked: ! task.checked },
+      })
+      return Tasks.findOne(args.id)
+    },
   },
   Author: {
     posts(author) {

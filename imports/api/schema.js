@@ -13,6 +13,7 @@ const typeDefs = gql`
   type Mutation {
     addTask(text: String!): Task
     deleteTask(id: String!): String
+    toggleChecked(id: String!): Task
   }
   type Author {
     id: Int
@@ -31,6 +32,7 @@ const typeDefs = gql`
     _id: String
     text: String
     createdAt: Date
+    checked: Boolean
   }
 `
 
