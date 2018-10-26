@@ -8,10 +8,11 @@ const typeDefs = gql`
     getAllAuthors: [Author]
     getOneTask(id: String!): Task
     getAllTasks: [Task]
-    getFortuneCookie: String # we'll use this later
+    getFortuneCookie: String
   }
   type Mutation {
     addTask(text: String!): Task
+    deleteTask(id: String!): String
   }
   type Author {
     id: Int

@@ -26,7 +26,11 @@ const resolvers = {
     addTask(_, args) {
       let id = Tasks.insert({ text: args.text, createdAt: new Date() })
       return Tasks.findOne(id)
-    }
+    },
+    deleteTask(_, args) {
+      Tasks.remove(args.id)
+      return args.id
+    },
   },
   Author: {
     posts(author) {
