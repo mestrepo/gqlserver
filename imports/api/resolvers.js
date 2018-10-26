@@ -1,32 +1,35 @@
-import { Author, FortuneCookie } from './connectors';
-import { Views } from './tasks';
+import { Author, FortuneCookie } from './connectors'
+import { Views, Tasks } from './tasks'
 
 // A map of functions which return data for the schema.
 const resolvers = {
   Query: {
     author(_, args) {
-      return Author.find({ where: args });
+      return Author.find({ where: args })
     },
     allAuthors() {
-      return Author.findAll();
+      return Author.findAll()
     },
     getFortuneCookie() {
-      return FortuneCookie.getOne();
+      return FortuneCookie.getOne()
+    },
+    task(_, args){
+      return Tasks.findOne(args.id)
     }
   },
   Author: {
     posts(author) {
-      return author.getPosts();
+      return author.getPosts()
     }
   },
   Post: {
     author(post) {
-      return post.getAuthor();
+      return post.getAuthor()
     },
     views(post) {
-      return Views.rawCollection().findOne({ postId: post.id }).then(view => view.views);
+      return Views.rawCollection().findOne({ postId: post.id }).then(view => view.views)
     }
   }
-};
+}
 
-export default resolvers;
+export default resolvers

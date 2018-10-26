@@ -6,6 +6,7 @@ const typeDefs = gql`
     author(firstName: String, lastName: String): Author
     allAuthors: [Author]
     getFortuneCookie: String # we'll use this later
+    task(id: String!): Task
   }
   type Author {
     id: Int
@@ -20,6 +21,10 @@ const typeDefs = gql`
     views: Int
     author: Author
   }
-`;
+  type Task {
+    _id: String
+    text: String
+  }
+`
 
-export default typeDefs;
+export default typeDefs
