@@ -10,12 +10,15 @@ const resolvers = {
     getAllAuthors() {
       return Author.findAll()
     },
+    getOneTask(_, args){
+      return Tasks.findOne(args.id)
+    },
+    getAllTasks() {
+      return Tasks.find({}).fetch()
+    },
     getFortuneCookie() {
       return FortuneCookie.getOne()
     },
-    getOneTask(_, args){
-      return Tasks.findOne(args.id)
-    }
   },
   Author: {
     posts(author) {

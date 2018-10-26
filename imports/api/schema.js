@@ -5,8 +5,9 @@ const typeDefs = gql`
   type Query {
     getOneAuthor(firstName: String, lastName: String): Author
     getAllAuthors: [Author]
-    getFortuneCookie: String # we'll use this later
     getOneTask(id: String!): Task
+    getAllTasks: [Task]
+    getFortuneCookie: String # we'll use this later
   }
   type Author {
     id: Int
