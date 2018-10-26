@@ -3,10 +3,10 @@ import { gql } from 'apollo-server-express'
 // The GraphQL schema
 const typeDefs = gql`
   type Query {
-    author(firstName: String, lastName: String): Author
-    allAuthors: [Author]
+    getOneAuthor(firstName: String, lastName: String): Author
+    getAllAuthors: [Author]
     getFortuneCookie: String # we'll use this later
-    task(id: String!): Task
+    getOneTask(id: String!): Task
   }
   type Author {
     id: Int

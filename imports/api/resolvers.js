@@ -4,16 +4,16 @@ import { Views, Tasks } from './tasks'
 // A map of functions which return data for the schema.
 const resolvers = {
   Query: {
-    author(_, args) {
+    getOneAuthor(_, args) {
       return Author.find({ where: args })
     },
-    allAuthors() {
+    getAllAuthors() {
       return Author.findAll()
     },
     getFortuneCookie() {
       return FortuneCookie.getOne()
     },
-    task(_, args){
+    getOneTask(_, args){
       return Tasks.findOne(args.id)
     }
   },
