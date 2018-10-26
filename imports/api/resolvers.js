@@ -1,4 +1,4 @@
-import { GraphQLDateTime } from 'graphql-iso-date';
+import { GraphQLDateTime } from 'graphql-iso-date'
 import { Author, FortuneCookie } from './connectors'
 import { Views, Tasks } from './tasks'
 
@@ -17,6 +17,9 @@ const resolvers = {
     },
     getAllTasks() {
       return Tasks.find({}).fetch()
+    },
+    getIncompleteTasksCount() {
+      return Tasks.find({ checked: { $ne: true } }).count();
     },
     getFortuneCookie() {
       return FortuneCookie.getOne()

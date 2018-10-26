@@ -8,6 +8,7 @@ const typeDefs = gql`
     getAllAuthors: [Author]
     getOneTask(id: String!): Task
     getAllTasks: [Task]
+    getIncompleteTasksCount: Int
     getFortuneCookie: String
   }
   type Mutation {
