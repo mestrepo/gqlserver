@@ -1,8 +1,10 @@
+import { GraphQLDateTime } from 'graphql-iso-date';
 import { Author, FortuneCookie } from './connectors'
 import { Views, Tasks } from './tasks'
 
 // A map of functions which return data for the schema.
 const resolvers = {
+  Date: GraphQLDateTime,
   Query: {
     getOneAuthor(_, args) {
       return Author.find({ where: args })

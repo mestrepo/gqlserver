@@ -2,6 +2,7 @@ import { gql } from 'apollo-server-express'
 
 // The GraphQL schema
 const typeDefs = gql`
+  scalar Date
   type Query {
     getOneAuthor(firstName: String, lastName: String): Author
     getAllAuthors: [Author]
@@ -25,6 +26,7 @@ const typeDefs = gql`
   type Task {
     _id: String
     text: String
+    createdAt: Date
   }
 `
 
