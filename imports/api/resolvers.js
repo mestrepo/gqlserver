@@ -22,6 +22,12 @@ const resolvers = {
       return FortuneCookie.getOne()
     },
   },
+  Mutation: {
+    addTask(_, args) {
+      let id = Tasks.insert({ text: args.text, createdAt: new Date() })
+      return Tasks.findOne(id)
+    }
+  },
   Author: {
     posts(author) {
       return author.getPosts()

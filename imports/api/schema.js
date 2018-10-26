@@ -10,6 +10,9 @@ const typeDefs = gql`
     getAllTasks: [Task]
     getFortuneCookie: String # we'll use this later
   }
+  type Mutation {
+    addTask(text: String!): Task
+  }
   type Author {
     id: Int
     firstName: String
