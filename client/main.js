@@ -1,6 +1,7 @@
 import { Accounts } from 'meteor/accounts-base'
 import ApolloClient from 'apollo-boost'
 
+import '../imports/startup/accounts-config.js'
 import '../imports/ui/body.js'
 
 const client = new ApolloClient({
