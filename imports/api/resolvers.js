@@ -24,6 +24,9 @@ const resolvers = {
     getFortuneCookie() {
       return FortuneCookie.getOne()
     },
+    getInitiationResponse(_, args) {
+      return 'Welcome to Neo\n\n1. Check In Vehicle\n2. Check Out Vehicle\n3. View Checked-in Vehicles\n4. View Account'
+    },
   },
   Mutation: {
     addTask(_, args) {

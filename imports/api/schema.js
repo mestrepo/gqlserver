@@ -10,6 +10,16 @@ const typeDefs = gql`
     getAllTasks: [Task]
     getIncompleteTasksCount: Int
     getFortuneCookie: String
+    getInitiationResponse(
+      Sequence: Int,
+      Mobile: String,
+      SessionId: String,
+      ServiceCode: String,
+      Operator: String,
+      Message: String,
+      ClientState: Boolean,
+      Type: String,
+    ): String
   }
   type Mutation {
     addTask(text: String!): Task
