@@ -10,7 +10,7 @@ const typeDefs = gql`
     getAllTasks: [Task]
     getIncompleteTasksCount: Int
     getFortuneCookie: String
-    getInitiationResponse(
+    initiate(
       Sequence: Int,
       Mobile: String,
       SessionId: String,
