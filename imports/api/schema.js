@@ -19,7 +19,7 @@ const typeDefs = gql`
       Message: String,
       ClientState: Boolean,
       Type: String,
-    ): String
+    ): [String]
   }
   type Mutation {
     addTask(text: String!): Task

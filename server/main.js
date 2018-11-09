@@ -40,6 +40,17 @@ Meteor.startup(() => {
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  /* playground: {
+    settings: {
+      'editor.theme': 'light',
+    },
+    tabs: [
+      {
+        endpoint,
+        query: defaultQuery,
+      },
+    ],
+  }, */
   context: async ({ req }) => ({
     user: await getUser(req.headers.authorization)
   })
