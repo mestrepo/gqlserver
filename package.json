@@ -11,6 +11,7 @@
     "@babel/runtime": "^7.0.0",
     "apollo-boost": "^0.1.16",
     "apollo-server-express": "^2.1.0",
+    "bcrypt": "^3.0.3",
     "casual": "^1.5.19",
     "graphql": "^14.0.2",
     "graphql-iso-date": "^3.6.1",
@@ -18,7 +19,8 @@
     "meteor-node-stubs": "^0.4.1",
     "node-fetch": "^2.2.0",
     "sequelize": "^4.39.0",
-    "sqlite": "^3.0.0"
+    "sqlite": "^3.0.0",
+    "sqlite3": "^4.0.6"
   },
   "meteor": {
     "mainModule": {
